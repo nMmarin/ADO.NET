@@ -32,18 +32,18 @@ namespace Academy
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.tabControlMain = new System.Windows.Forms.TabControl();
 			this.TabPageStudents = new System.Windows.Forms.TabPage();
+			this.StudentsDirection = new System.Windows.Forms.ComboBox();
+			this.labelStudentsDirection = new System.Windows.Forms.Label();
+			this.labelStudentsGroup = new System.Windows.Forms.Label();
+			this.comboBoxStudentsGroup = new System.Windows.Forms.ComboBox();
+			this.labelSearch = new System.Windows.Forms.Label();
+			this.SearchStudents = new System.Windows.Forms.TextBox();
 			this.statusStripStudents = new System.Windows.Forms.StatusStrip();
+			this.toolStripStatusLabelStudentsCount = new System.Windows.Forms.ToolStripStatusLabel();
 			this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
 			this.TabPageGroups = new System.Windows.Forms.TabPage();
 			this.TabPageDisciplines = new System.Windows.Forms.TabPage();
 			this.tabPageTeachers = new System.Windows.Forms.TabPage();
-			this.toolStripStatusLabelStudentsCount = new System.Windows.Forms.ToolStripStatusLabel();
-			this.SearchStudents = new System.Windows.Forms.TextBox();
-			this.labelSearch = new System.Windows.Forms.Label();
-			this.comboBoxStudentsGroup = new System.Windows.Forms.ComboBox();
-			this.labelStudentsGroup = new System.Windows.Forms.Label();
-			this.labelStudentsDirection = new System.Windows.Forms.Label();
-			this.StudentsDirection = new System.Windows.Forms.ComboBox();
 			this.tabControlMain.SuspendLayout();
 			this.TabPageStudents.SuspendLayout();
 			this.statusStripStudents.SuspendLayout();
@@ -65,12 +65,12 @@ namespace Academy
 			// 
 			// TabPageStudents
 			// 
+			this.TabPageStudents.Controls.Add(this.SearchStudents);
 			this.TabPageStudents.Controls.Add(this.StudentsDirection);
 			this.TabPageStudents.Controls.Add(this.labelStudentsDirection);
 			this.TabPageStudents.Controls.Add(this.labelStudentsGroup);
 			this.TabPageStudents.Controls.Add(this.comboBoxStudentsGroup);
 			this.TabPageStudents.Controls.Add(this.labelSearch);
-			this.TabPageStudents.Controls.Add(this.SearchStudents);
 			this.TabPageStudents.Controls.Add(this.statusStripStudents);
 			this.TabPageStudents.Controls.Add(this.dataGridViewStudents);
 			this.TabPageStudents.Location = new System.Drawing.Point(4, 22);
@@ -81,6 +81,61 @@ namespace Academy
 			this.TabPageStudents.Text = "Students";
 			this.TabPageStudents.UseVisualStyleBackColor = true;
 			// 
+			// StudentsDirection
+			// 
+			this.StudentsDirection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.StudentsDirection.FormattingEnabled = true;
+			this.StudentsDirection.Location = new System.Drawing.Point(659, 17);
+			this.StudentsDirection.Name = "StudentsDirection";
+			this.StudentsDirection.Size = new System.Drawing.Size(121, 21);
+			this.StudentsDirection.TabIndex = 7;
+			// 
+			// labelStudentsDirection
+			// 
+			this.labelStudentsDirection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.labelStudentsDirection.AutoSize = true;
+			this.labelStudentsDirection.Location = new System.Drawing.Point(529, 21);
+			this.labelStudentsDirection.Name = "labelStudentsDirection";
+			this.labelStudentsDirection.Size = new System.Drawing.Size(124, 13);
+			this.labelStudentsDirection.TabIndex = 6;
+			this.labelStudentsDirection.Text = "Направление обучения";
+			// 
+			// labelStudentsGroup
+			// 
+			this.labelStudentsGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.labelStudentsGroup.AutoSize = true;
+			this.labelStudentsGroup.Location = new System.Drawing.Point(340, 21);
+			this.labelStudentsGroup.Name = "labelStudentsGroup";
+			this.labelStudentsGroup.Size = new System.Drawing.Size(42, 13);
+			this.labelStudentsGroup.TabIndex = 5;
+			this.labelStudentsGroup.Text = "Группа";
+			// 
+			// comboBoxStudentsGroup
+			// 
+			this.comboBoxStudentsGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.comboBoxStudentsGroup.FormattingEnabled = true;
+			this.comboBoxStudentsGroup.Location = new System.Drawing.Point(388, 17);
+			this.comboBoxStudentsGroup.Name = "comboBoxStudentsGroup";
+			this.comboBoxStudentsGroup.Size = new System.Drawing.Size(121, 21);
+			this.comboBoxStudentsGroup.TabIndex = 4;
+			// 
+			// labelSearch
+			// 
+			this.labelSearch.AutoSize = true;
+			this.labelSearch.Location = new System.Drawing.Point(7, 21);
+			this.labelSearch.Name = "labelSearch";
+			this.labelSearch.Size = new System.Drawing.Size(39, 13);
+			this.labelSearch.TabIndex = 3;
+			this.labelSearch.Text = "Поиск";
+			// 
+			// SearchStudents
+			// 
+			this.SearchStudents.Location = new System.Drawing.Point(52, 17);
+			this.SearchStudents.Name = "SearchStudents";
+			this.SearchStudents.Size = new System.Drawing.Size(273, 20);
+			this.SearchStudents.TabIndex = 2;
+			this.SearchStudents.TextChanged += new System.EventHandler(this.SearchStudents_TextChanged);
+			// 
 			// statusStripStudents
 			// 
 			this.statusStripStudents.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -90,6 +145,12 @@ namespace Academy
 			this.statusStripStudents.Size = new System.Drawing.Size(951, 22);
 			this.statusStripStudents.TabIndex = 1;
 			this.statusStripStudents.Text = "statusStrip1";
+			// 
+			// toolStripStatusLabelStudentsCount
+			// 
+			this.toolStripStatusLabelStudentsCount.Name = "toolStripStatusLabelStudentsCount";
+			this.toolStripStatusLabelStudentsCount.Size = new System.Drawing.Size(118, 17);
+			this.toolStripStatusLabelStudentsCount.Text = "toolStripStatusLabel1";
 			// 
 			// dataGridViewStudents
 			// 
@@ -133,67 +194,6 @@ namespace Academy
 			this.tabPageTeachers.Text = "Teachers";
 			this.tabPageTeachers.UseVisualStyleBackColor = true;
 			// 
-			// toolStripStatusLabelStudentsCount
-			// 
-			this.toolStripStatusLabelStudentsCount.Name = "toolStripStatusLabelStudentsCount";
-			this.toolStripStatusLabelStudentsCount.Size = new System.Drawing.Size(118, 17);
-			this.toolStripStatusLabelStudentsCount.Text = "toolStripStatusLabel1";
-			// 
-			// SearchStudents
-			// 
-			this.SearchStudents.Location = new System.Drawing.Point(52, 17);
-			this.SearchStudents.Name = "SearchStudents";
-			this.SearchStudents.Size = new System.Drawing.Size(273, 20);
-			this.SearchStudents.TabIndex = 2;
-			// 
-			// labelSearch
-			// 
-			this.labelSearch.AutoSize = true;
-			this.labelSearch.Location = new System.Drawing.Point(7, 21);
-			this.labelSearch.Name = "labelSearch";
-			this.labelSearch.Size = new System.Drawing.Size(39, 13);
-			this.labelSearch.TabIndex = 3;
-			this.labelSearch.Text = "Поиск";
-			//this.labelSearch.Click += new System.EventHandler(this.label1_Click);
-			// 
-			// comboBoxStudentsGroup
-			// 
-			this.comboBoxStudentsGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.comboBoxStudentsGroup.FormattingEnabled = true;
-			this.comboBoxStudentsGroup.Location = new System.Drawing.Point(388, 17);
-			this.comboBoxStudentsGroup.Name = "comboBoxStudentsGroup";
-			this.comboBoxStudentsGroup.Size = new System.Drawing.Size(121, 21);
-			this.comboBoxStudentsGroup.TabIndex = 4;
-			// 
-			// labelStudentsGroup
-			// 
-			this.labelStudentsGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.labelStudentsGroup.AutoSize = true;
-			this.labelStudentsGroup.Location = new System.Drawing.Point(340, 21);
-			this.labelStudentsGroup.Name = "labelStudentsGroup";
-			this.labelStudentsGroup.Size = new System.Drawing.Size(42, 13);
-			this.labelStudentsGroup.TabIndex = 5;
-			this.labelStudentsGroup.Text = "Группа";
-			// 
-			// labelStudentsDirection
-			// 
-			this.labelStudentsDirection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.labelStudentsDirection.AutoSize = true;
-			this.labelStudentsDirection.Location = new System.Drawing.Point(529, 21);
-			this.labelStudentsDirection.Name = "labelStudentsDirection";
-			this.labelStudentsDirection.Size = new System.Drawing.Size(124, 13);
-			this.labelStudentsDirection.TabIndex = 6;
-			this.labelStudentsDirection.Text = "Направление обучения";
-			// 
-			// StudentsDirection
-			// 
-			this.StudentsDirection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.StudentsDirection.FormattingEnabled = true;
-			this.StudentsDirection.Location = new System.Drawing.Point(659, 17);
-			this.StudentsDirection.Name = "StudentsDirection";
-			this.StudentsDirection.Size = new System.Drawing.Size(121, 21);
-			this.StudentsDirection.TabIndex = 7;
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,6 +229,7 @@ namespace Academy
 		private System.Windows.Forms.Label labelStudentsDirection;
 		private System.Windows.Forms.Label labelStudentsGroup;
 		private System.Windows.Forms.ComboBox comboBoxStudentsGroup;
+
 	}
 }
 
